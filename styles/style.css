@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 .quicksand-font {
@@ -15,6 +14,9 @@
 .header-div {
     margin-left: 100px;
 }
+body{
+    width: 100%;
+} 
 
 
 /*    nav style    */
@@ -127,6 +129,7 @@
    
     background-repeat: repeat;
      padding: 100px 150px;
+     
     
 }
 .h-curriculum{
@@ -214,8 +217,9 @@
 /*  Stories- style    */
 
 .stories-section{
-    background-image: url("../assets/bg.png"), linear-gradient(0.00deg, rgba(254, 163, 1, 0.3), rgba(255, 255, 255, 0.3) 100%);
-padding:5px 150px;
+    background-image: url("../assets/bg.png"), linear-gradient(0.00deg, rgba(254, 163, 1, 0.3), rgba(255, 255, 255, 0.3) 100%)
+/* padding:5px 0px; */
+
 
 }
 .h1-stories{
@@ -224,18 +228,15 @@ padding:5px 150px;
   text-align: center; 
 }
 .stories-container {
+margin-bottom: 100px;
+display: grid;
+ grid-template-areas:
+    "stories-div1  stories-div2  stories-div3 "
+    "stories-div1  stories-div4  stories-div5";
 
+gap: 10px;    
 
-    
-  width: 1200px;
-    margin-bottom: 100px;
-    
-
-    display: grid;
-    grid-template-areas:
-        "stories-div1  stories-div2  stories-div3 "
-        "stories-div1  stories-div4  stories-div5";
-    gap: 20px;
+ 
     
 }
  /* grid area name*/
@@ -256,8 +257,10 @@ padding:5px 150px;
     grid-area: stories-div5;
  }
  .card-stories{
+    width: 400px;
     border-radius: 16px;
     background:rgb(255, 255, 255) ;
+    
  }
  .img-div{
     border-radius: 16px;
@@ -324,7 +327,11 @@ padding:5px 150px;
     font-weight: 700;
     font-size: 15.34px;
 }
-
+.button{
+    
+    justify-content: center;
+    align-items: center;
+}
 /* footer style */
 
 
@@ -393,6 +400,7 @@ padding:5px 150px;
 
 
 /* media quary */
+
 @media screen and (max-width:576px) {
     
      .hr{
@@ -402,9 +410,53 @@ padding:5px 150px;
     .h3-header{
         display: none;
     }
-     .stories-section{ /*for test */
-display: none;
+    .curriculum-section{
+        padding: 0px 0px;
     }
+    .storis-section {
+        padding-right: 10px;
+        padding: 10px;
+    }
+
+    .storis-section .stori-container {
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 0;
+        /* Allow items to wrap into rows */
+        gap: 10px;
+        /* Add space between cards */
+        justify-content: center;
+        /* Center items horizontally */
+    }
+
+    
+    
+
+     .card-stories {
+        flex: 1 1 calc(50% - 10px);
+        /* Each card takes 50% of the row */
+        max-width: calc(50% - 10px);
+        /* Prevent cards from exceeding 50% width */
+        box-sizing: border-box;
+        /* Ensure padding andd border are included in size */
+    
+}
+.stories-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next line */
+    gap: 5px;  
+}
+
+.stories-container > .stories-div1 {
+    display: none; /* Hides div1 on mobile */
+}
+
+.stories-container > div {
+    flex: 1 1 calc(50%); /* Each item takes up 50% of the container width */
+    margin: 0; /* Removes any margin around items */
+}
+
     .header-div {
         margin-left: 0px;
 
@@ -429,8 +481,22 @@ display: none;
     flex-direction:column-reverse;
 text-align: center;
 }
-.curriculum-section{
+.card-div{
 
-paddin0
+flex-direction: column;
+}
+.btn{
+display: none;
+}
+.p-footer1{
+    width: 300px;
+}
+
+.footer-secction{
+    flex-direction: column;
+    width: 120px;
+    padding-left: 30px;
 }
 }
+
+   
